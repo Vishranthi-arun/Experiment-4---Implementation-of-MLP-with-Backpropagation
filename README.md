@@ -99,7 +99,7 @@ In the backward pass,
 
 
 ## ALGORITHM:
-
+```
 1.Import the necessary libraries of python.
 
 2. After that, create a list of attribute names in the dataset and use it in a call to the read_csv() function of the pandas library along with the name of the CSV file containing the dataset.
@@ -116,9 +116,107 @@ Normalize our dataset.
 7.In order to get the predicted values we call the predict() function on the testing data set.
 
 8. Finally, call the functions confusion_matrix(), and the classification_report() in order to evaluate the performance of our classifier.
-
+```
 ## PROGRAM 
+```
+Developed by: Virgil Jovita.A
+Reg. No: 212221240062
+```
+Importing Libraries
+```
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder,StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+```
+Reading Dataset
+```
+df = pd.read_csv("./IRIS.csv")
+df
+```
+Assiging X and Y values
+```
+# Takes first 4 columns and assign them to variable "X"
+# X = df.iloc[:,:4]
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
 
+# Takes first 5th columns and assign them to variable "Y".
+# y = df.select_dtypes(include=[object])  
+y = df['species']
+```
+First five values of X and Y
+```
+X.head()
+
+y.head()
+```
+Unique values in Y
+```
+print(y.unique())
+```
+Transforming Categorical into numerical values for Y
+```
+le = LabelEncoder()
+y = le.fit_transform(y)
+
+y
+```
+Splitting Dataset for Training and Testing
+```
+# 80% - training data and 20% - test data)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)
+```
+Normalizing X values
+```
+# Feature scaling
+scaler = StandardScaler()  
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)  
+X_test = scaler.transform(X_test)
+```
+Creating MLP and classifing
+```
+mlp = MLPClassifier(hidden_layer_sizes=(10, 10, 10), max_iter=1000)  
+mlp.fit(X_train, y_train)  
+predictions = mlp.predict(X_test) 
+```
+Predictions
+```
+print(predictions)
+```
+Accuracy
+```
+accuracy_score(y_test,predictions)
+```
+Confusion Matrix
+```
+print(confusion_matrix(y_test,predictions))
+```
+Classification Report
+```
+print(classification_report(y_test,predictions))
+```
 ## OUTPUT 
+Reading Dataset
+<img width="419" alt="df" src="https://user-images.githubusercontent.com/93427278/200033851-4ba9e8dd-4e21-452a-9e37-f315761a9645.png">
+First five values of X
+<img width="340" alt="xhead" src="https://user-images.githubusercontent.com/93427278/200033968-171fadba-c604-4e2d-92e5-aa2abcb7ca7f.png">
+First five values of Y
+<img width="190" alt="yhead" src="https://user-images.githubusercontent.com/93427278/200034034-45a1d328-0200-4344-a976-f02c519b642f.png">
+Unique values in Y
+<img width="299" alt="yunique" src="https://user-images.githubusercontent.com/93427278/200034091-29f9defc-519e-4afd-9403-395cf8bf76ad.png">
+Transforming Categorical into numerical values for Y
+<img width="432" alt="y_encoded" src="https://user-images.githubusercontent.com/93427278/200034162-860fcc7a-87de-4cf8-aa91-9c648f590c1f.png">
+Predictions
+<img width="365" alt="pred" src="https://user-images.githubusercontent.com/93427278/200034256-f283a887-44ba-492d-9f98-b03b1d61d072.png">
+Accuracy
+<img width="32" alt="acc" src="https://user-images.githubusercontent.com/93427278/200034371-7b7a8003-2a56-4b34-adc2-a3ae19605516.png">
+Confusion Matrix
+<img width="86" alt="conf_mat" src="https://user-images.githubusercontent.com/93427278/200034461-fc393029-8791-490b-ad09-9a64f6fe09a5.png">
+Classification Report
+<img width="347" alt="class_rep" src="https://user-images.githubusercontent.com/93427278/200034497-4963bd1a-860b-45c2-a347-de7c9a3f86d7.png">
 
 ## RESULT
+Thus a Multilayer Perceptron with Backpropagation is implemented for Multi classification
