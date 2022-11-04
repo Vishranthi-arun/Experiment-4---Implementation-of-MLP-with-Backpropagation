@@ -102,20 +102,28 @@ In the backward pass,
 ```
 1.Import the necessary libraries of python.
 
-2. After that, create a list of attribute names in the dataset and use it in a call to the read_csv() function of the pandas library along with the name of the CSV file containing the dataset.
+2. After that, create a list of attribute names in the dataset and use it in a
+call to the read_csv() function of the pandas library along with the name of the
+CSV file containing the dataset.
 
-3. Divide the dataset into two parts. While the first part contains the first four columns that we assign in the variable x. Likewise, the second part contains only the last column that is the class label. Further, assign it to the variable y.
+3. Divide the dataset into two parts. While the first part contains the first 
+four columns that we assign in the variable x. Likewise, the second part contains
+only the last column that is the class label. Further, assign it to the variable y.
 
-4. Call the train_test_split() function that further divides the dataset into training data and testing data with a testing data size of 20%.
+4. Call the train_test_split() function that further divides the dataset into
+training data and testing data with a testing data size of 20%.
 Normalize our dataset. 
 
-5.In order to do that we call the StandardScaler() function. Basically, the StandardScaler() function subtracts the mean from a feature and scales it to the unit variance.
+5.In order to do that we call the StandardScaler() function. Basically, the 
+StandardScaler() function subtracts the mean from a feature and scales it to the unit variance.
 
-6.Invoke the MLPClassifier() function with appropriate parameters indicating the hidden layer sizes, activation function, and the maximum number of iterations.
+6.Invoke the MLPClassifier() function with appropriate parameters indicating 
+the hidden layer sizes, activation function, and the maximum number of iterations.
 
 7.In order to get the predicted values we call the predict() function on the testing data set.
 
-8. Finally, call the functions confusion_matrix(), and the classification_report() in order to evaluate the performance of our classifier.
+8. Finally, call the functions confusion_matrix(), and the classification_report() 
+in order to evaluate the performance of our classifier.
 ```
 ## PROGRAM 
 ```
@@ -199,52 +207,52 @@ Classification Report
 print(classification_report(y_test,predictions))
 ```
 ## OUTPUT 
-Reading Dataset
+### Reading Dataset
 <img width="419" alt="df" src="https://user-images.githubusercontent.com/93427278/200033851-4ba9e8dd-4e21-452a-9e37-f315761a9645.png">
 
 
-First five values of X
+### First five values of X
 <img width="340" alt="xhead" src="https://user-images.githubusercontent.com/93427278/200033968-171fadba-c604-4e2d-92e5-aa2abcb7ca7f.png">
 
 
 
-First five values of Y
+### First five values of Y
 <img width="190" alt="yhead" src="https://user-images.githubusercontent.com/93427278/200034034-45a1d328-0200-4344-a976-f02c519b642f.png">
 
 
 
 
-Unique values in Y
+### Unique values in Y
 <img width="299" alt="yunique" src="https://user-images.githubusercontent.com/93427278/200034091-29f9defc-519e-4afd-9403-395cf8bf76ad.png">
 
 
 
 
-Transforming Categorical into numerical values for Y
+### Transforming Categorical into numerical values for Y
 <img width="432" alt="y_encoded" src="https://user-images.githubusercontent.com/93427278/200034162-860fcc7a-87de-4cf8-aa91-9c648f590c1f.png">
 
 
 
 
-Predictions
+### Predictions
 <img width="365" alt="pred" src="https://user-images.githubusercontent.com/93427278/200034256-f283a887-44ba-492d-9f98-b03b1d61d072.png">
 
 
 
 
 
-Accuracy
+### Accuracy
 <img width="32" alt="acc" src="https://user-images.githubusercontent.com/93427278/200034371-7b7a8003-2a56-4b34-adc2-a3ae19605516.png">
 
 
 
 
-Confusion Matrix
+### Confusion Matrix
 <img width="86" alt="conf_mat" src="https://user-images.githubusercontent.com/93427278/200034461-fc393029-8791-490b-ad09-9a64f6fe09a5.png">
 
 
 
-Classification Report
+### Classification Report
 <img width="347" alt="class_rep" src="https://user-images.githubusercontent.com/93427278/200034497-4963bd1a-860b-45c2-a347-de7c9a3f86d7.png">
 
 ## RESULT
