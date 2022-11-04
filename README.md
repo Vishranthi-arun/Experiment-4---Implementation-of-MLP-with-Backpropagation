@@ -24,7 +24,7 @@ MLP has the following features:
 Ø  Consists of two passes
 
   	(i)Feed Forward pass
-	         (ii)Backward pass
+	(ii)Backward pass
            
 Ø  Learning process –backpropagation
 
@@ -119,8 +119,8 @@ Normalize our dataset.
 ```
 ## PROGRAM 
 ```
-Developed by: Virgil Jovita.A
-Reg. No: 212221240062
+Developed by: Vishranthi.A
+Reg. No: 212221230124
 ```
 Importing Libraries
 ```
@@ -201,20 +201,49 @@ print(classification_report(y_test,predictions))
 ## OUTPUT 
 Reading Dataset
 <img width="419" alt="df" src="https://user-images.githubusercontent.com/93427278/200033851-4ba9e8dd-4e21-452a-9e37-f315761a9645.png">
+
+
 First five values of X
 <img width="340" alt="xhead" src="https://user-images.githubusercontent.com/93427278/200033968-171fadba-c604-4e2d-92e5-aa2abcb7ca7f.png">
+
+
+
 First five values of Y
 <img width="190" alt="yhead" src="https://user-images.githubusercontent.com/93427278/200034034-45a1d328-0200-4344-a976-f02c519b642f.png">
+
+
+
+
 Unique values in Y
 <img width="299" alt="yunique" src="https://user-images.githubusercontent.com/93427278/200034091-29f9defc-519e-4afd-9403-395cf8bf76ad.png">
+
+
+
+
 Transforming Categorical into numerical values for Y
 <img width="432" alt="y_encoded" src="https://user-images.githubusercontent.com/93427278/200034162-860fcc7a-87de-4cf8-aa91-9c648f590c1f.png">
+
+
+
+
 Predictions
 <img width="365" alt="pred" src="https://user-images.githubusercontent.com/93427278/200034256-f283a887-44ba-492d-9f98-b03b1d61d072.png">
+
+
+
+
+
 Accuracy
 <img width="32" alt="acc" src="https://user-images.githubusercontent.com/93427278/200034371-7b7a8003-2a56-4b34-adc2-a3ae19605516.png">
+
+
+
+
 Confusion Matrix
 <img width="86" alt="conf_mat" src="https://user-images.githubusercontent.com/93427278/200034461-fc393029-8791-490b-ad09-9a64f6fe09a5.png">
+
+
+
 Classification Report
 <img width="347" alt="class_rep" src="https://user-images.githubusercontent.com/93427278/200034497-4963bd1a-860b-45c2-a347-de7c9a3f86d7.png">
 
